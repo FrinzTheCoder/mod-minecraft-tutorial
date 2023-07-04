@@ -1,6 +1,7 @@
 package com.frinz.tutorialmod.item;
 
 import com.frinz.tutorialmod.TutorialMod;
+import com.frinz.tutorialmod.item.custom.SatanicItem;
 import net.minecraft.world.item.Item;
 import net.minecraftforge.eventbus.api.IEventBus;
 import net.minecraftforge.registries.DeferredRegister;
@@ -22,7 +23,7 @@ public class ModItems {
                     .tab(ModCreativeModeTab.TUTORIAL_TAB))
     );
     public static final RegistryObject<Item> SATANIC = ITEMS.register(
-            "satanic", () -> new Item(new Item.Properties()
+            "satanic", () -> new SatanicItem(new Item.Properties()
                     .fireResistant()
                     .stacksTo(1)
                     .durability(1)
