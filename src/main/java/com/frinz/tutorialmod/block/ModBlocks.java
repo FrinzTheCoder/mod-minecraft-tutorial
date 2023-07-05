@@ -1,6 +1,7 @@
 package com.frinz.tutorialmod.block;
 
 import com.frinz.tutorialmod.TutorialMod;
+import com.frinz.tutorialmod.block.custom.JumpyBlock;
 import com.frinz.tutorialmod.item.ModCreativeModeTab;
 import com.frinz.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -47,6 +48,15 @@ public class ModBlocks {
                             .strength(2)
                             .requiresCorrectToolForDrops(),
                     UniformInt.of(3,7)
+            ),
+            ModCreativeModeTab.TUTORIAL_TAB
+    );
+
+    public static final RegistryObject<Block> JUMPY_BLOCK = registerBlock("jumpy_block",
+            () -> new JumpyBlock(
+                    BlockBehaviour.Properties.of(Material.STONE)
+                            .strength(2)
+                            .requiresCorrectToolForDrops()
             ),
             ModCreativeModeTab.TUTORIAL_TAB
     );
