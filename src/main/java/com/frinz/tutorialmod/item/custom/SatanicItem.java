@@ -1,5 +1,7 @@
 package com.frinz.tutorialmod.item.custom;
 
+import net.minecraft.ChatFormatting;
+import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.network.chat.Component;
 import net.minecraft.world.InteractionHand;
 import net.minecraft.world.InteractionResultHolder;
@@ -11,8 +13,12 @@ import net.minecraft.world.entity.animal.horse.Horse;
 import net.minecraft.world.entity.player.Player;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.item.TooltipFlag;
 import net.minecraft.world.level.Level;
 import net.minecraft.world.phys.Vec3;
+import org.jetbrains.annotations.Nullable;
+
+import java.util.List;
 
 public class SatanicItem extends Item {
     public SatanicItem(Properties properties) {
@@ -32,6 +38,19 @@ public class SatanicItem extends Item {
         }
 
         return super.use(level, player, interactionHand);
+    }
+
+    @Override
+    public void appendHoverText(ItemStack itemStack, @Nullable Level level, List<Component> components, TooltipFlag tooltipFlag) {
+        if(Screen.hasShiftDown()){
+            components.add(Component.literal("Right click to activate ").withStyle(ChatFormatting.WHITE).
+                    append("SATAN POWER").withStyle(ChatFormatting.RED));
+        }
+        else{
+            components.add(Component.literal("Press SHIFT for more info").withStyle(ChatFormatting.YELLOW));
+        }
+
+        super.appendHoverText(itemStack, level, components, tooltipFlag);
     }
 
     private void addEffectToPlayer(Player player){
