@@ -2,6 +2,7 @@ package com.frinz.tutorialmod.block;
 
 import com.frinz.tutorialmod.TutorialMod;
 import com.frinz.tutorialmod.block.custom.JumpyBlock;
+import com.frinz.tutorialmod.block.custom.ZirconLampBlock;
 import com.frinz.tutorialmod.item.ModCreativeModeTab;
 import com.frinz.tutorialmod.item.ModItems;
 import net.minecraft.util.valueproviders.UniformInt;
@@ -57,6 +58,16 @@ public class ModBlocks {
                     BlockBehaviour.Properties.of(Material.STONE)
                             .strength(2)
                             .requiresCorrectToolForDrops()
+            ),
+            ModCreativeModeTab.TUTORIAL_TAB
+    );
+
+    public static final RegistryObject<Block> ZIRCON_LAMP_BLOCK = registerBlock("zircon_lamp",
+            () -> new ZirconLampBlock(
+                    BlockBehaviour.Properties.of(Material.STONE)
+                            .strength(2)
+                            .requiresCorrectToolForDrops()
+                            .lightLevel(state -> state.getValue(ZirconLampBlock.LIT) ? 15:0)
             ),
             ModCreativeModeTab.TUTORIAL_TAB
     );
