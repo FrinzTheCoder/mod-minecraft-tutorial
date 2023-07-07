@@ -3,6 +3,9 @@
   "item.tutorialmod.raw_zircon": "Raw Zircon",
   "item.tutorialmod.satanic" : "Satanic",
 
+  "item.tutorialmod.blueberry": "Blueberry",
+  "item.tutorialmod.blueberry_seeds": "Blueberry seeds",
+
   "itemGroup.tutorialtab": "Zircon Tutorial Tab",
 
   "block.tutorialmod.zircon_block": "Block of Zircon",
@@ -10,5 +13,7 @@
   "block.tutorialmod.deepslate_zircon_ore": "Deepslate Zircon Ore",
 
   "block.tutorialmod.jumpy_block": "Jumpy Block",
-  "block.tutorialmod.zircon_lamp": "Zircon Lamp"
+  "block.tutorialmod.zircon_lamp": "Zircon Lamp",
+
+  "block.tutorialmod.blueberry_crop": "Blueberry Crop"
 }
