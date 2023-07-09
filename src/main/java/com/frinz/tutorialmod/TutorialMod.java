@@ -2,6 +2,7 @@ package com.frinz.tutorialmod;
 
 import com.frinz.tutorialmod.block.ModBlocks;
 import com.frinz.tutorialmod.item.ModItems;
+import com.frinz.tutorialmod.villager.ModVillagers;
 import com.mojang.logging.LogUtils;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -25,6 +26,8 @@ public class TutorialMod
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
 
+        ModVillagers.register(modEventBus);
+
         modEventBus.addListener(this::commonSetup);
 
         MinecraftForge.EVENT_BUS.register(this);
@@ -32,7 +35,9 @@ public class TutorialMod
 
     private void commonSetup(final FMLCommonSetupEvent event)
     {
-        // TODO NOT YET HAVE IMPLEMENTATIONS
+        event.enqueueWork(()->{
+           ModVillagers.registerPOIs();
+        });
     }
 
     // You can use EventBusSubscriber to automatically register all static methods in the class annotated with @SubscribeEvent
